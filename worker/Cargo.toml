@@ -1,0 +1,45 @@
+[package]
+name = "xpertly_worker"
+version = "0.1.0"
+license = "ISC"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["lib"]
+
+[dependencies]
+mongo_derive = { path="../mongo_api/mongo_derive"}
+mongo_api = { path="../mongo_api"}
+actix = "0.13.0"
+serde_json = { version = "1.0", features = ["raw_value"] }
+serde = { version = "1.0", features = ["derive", "rc"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+reqwest = { version = "0.11", default-features = false, features = ["blocking", "json", "rustls-tls"]}
+tokio = { version = "1", features = ["full"] }
+http = "0.2"
+url = "2.2.2"
+handlebars = "4.2"
+regex = "1.5"
+chrono = { version = "0.4", features = ["serde"] }
+jwt = "0.16.0"
+once_cell = "1.12.0"
+anyhow = "1.0.57"
+async-recursion = "1.0.0"
+# elasticsearch = "7.14.0-alpha.1"
+openssl-sys = { version = "*", features = ["vendored"] }
+evalexpr = "8.1.0"
+serde_with = "2.2.0"
+base64 = "0.21.0"
+xpertly_common = { path = "../common" }
+# hashicorp_vault = "2.1.0"
+rand = "0.8.4"
+jsonwebtokens-cognito = "0.1.0-alpha"
+tera = { git = "https://github.com/p-ackland/tera.git", branch = "master", default-features = true }
+jsonwebtoken = "8.2.0"
+async-trait = "0.1.66"
+
+[dependencies.mongodb]
+version = "2.4.0"
+default-features = false
+features = ["async-std-runtime"]

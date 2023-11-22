@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "common",
+    "worker",
+    "api",
+    "mongo_api"
+]

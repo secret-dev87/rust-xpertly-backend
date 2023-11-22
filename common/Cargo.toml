@@ -1,0 +1,24 @@
+[package]
+name = "xpertly_common"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "xpertly_common"
+crate-type = ["lib"]
+
+[dependencies]
+mongo_derive = { path="../mongo_api/mongo_derive"}
+mongo_api = { path="../mongo_api"}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["raw_value"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+serde_with = "1.14.0"
+anyhow = "1.0.51"
+
+[dependencies.mongodb]
+version = "2.4.0"
+default-features = false
+features = ["async-std-runtime"]

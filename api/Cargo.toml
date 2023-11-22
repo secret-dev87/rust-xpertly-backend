@@ -1,0 +1,37 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+xpertly_worker = { path = "../worker" }
+xpertly_common = { path = "../common" }
+mongo_api = { path = "../mongo_api"}
+actix = "0.13.0"
+actix-web = "4.3.0"
+actix-web-actors = "4.2.0"
+actix-ws = "0.2.5"
+actix-service = "2.0.2"
+dotenv = "0.15.0"
+aws-config = "0.54.1"
+aws-sdk-cognitoidentityprovider = "0.24.0"
+env_logger = "0.10.0"
+futures = "0.3.26"
+jwks-client = "0.2.0"
+uuid = { version = "1", features = ["v4", "serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["raw_value"] }
+tokio = { version = "1.0", features = ["full"] }
+thiserror = "^1"
+reqwest = { version = "0.11", default-features = false, features = ["json", "blocking", "rustls-tls"]}
+jsonwebtokens-cognito = "0.1.0-alpha"
+jwt = "0.16.0"
+jsonwebtoken = "8.2.0"
+urlencoding = "2.1.2"
+
+[dependencies.mongodb]
+version = "2.4.0"
+default-features = false
+features = ["async-std-runtime"]
